@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'; // Importa BrowserRouter
+import styles from './Header.module.css'
 
 const Header = () => {
     return (
+        <div className={styles.HeaderContainer}>
         <Router> {/* Envuelve tu aplicación con el componente BrowserRouter */}
             <header className="bg-gray-800 text-white p-4">
                 <div className="container mx-auto flex items-center justify-between">
@@ -15,6 +17,7 @@ const Header = () => {
                 </div>
             </header>
         </Router>
+        </div>
     );
 };
 

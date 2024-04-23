@@ -5,8 +5,10 @@ import styles from './Home.module.css';
 
 function Home() {
     return (
-        <div>
+        <div className={styles.HomeContainer}>
             <Header/>
+            <p>soy un home</p>
+            <p>soy un home</p>
             <p>soy un home</p>
             <p>soy un home</p>
             <p>soy un home</p>

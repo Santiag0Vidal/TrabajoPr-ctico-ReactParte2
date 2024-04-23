@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Footer.module.css'; // Importa el archivo CSS
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white p-4">
+        <footer className={styles.footerContainer}> {/* Utiliza la clase CSS desde el archivo importado */}
             <div className="container mx-auto">
                 <p>soy un footer</p>
                 {/* Información ficticia de la aplicación */}
