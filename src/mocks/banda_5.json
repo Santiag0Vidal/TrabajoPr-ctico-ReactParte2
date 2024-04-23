@@ -1,0 +1,8 @@
+{
+    "id": 5,
+    "nombre": "Virus",
+    "genero": "New Wave",
+    "año_formacion": 1979,
+    "miembros": ["Marcelo Moura", "Julio Moura", "Federico Moura", "Daniel Sbarra", "Enrique Mugetti"],
+    "biografia": "Virus es una banda de new wave y synth-pop argentina formada en 1979. Es una de las bandas más importantes e influyentes de la historia del rock argentino."
+}
