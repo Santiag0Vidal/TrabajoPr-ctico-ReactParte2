@@ -2,20 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'; // Importa BrowserRouter
 import styles from './Header.module.css'
+import x2small from '../../assets/x2small.png';
 
 const Header = () => {
+    const currentDate = new Date().toLocaleDateString();
     return (
         <div className={styles.HeaderContainer}>
-        <Router> {/* Envuelve tu aplicación con el componente BrowserRouter */}
-            <header className="bg-gray-800 text-white p-4">
-                <div className="container mx-auto flex items-center justify-between">
-                    <p>soy un header</p>
-                    <Link to="/">
-                        <img src="/logo.png" alt="Logo" className="h-8" />
-                    </Link>
-                    {/* Otras imágenes, textos o descripciones */}
-                </div>
-            </header>
+        <Router> {}
+        <header className={styles.header}>
+            <a href="/" className={`${styles.homeLink}`}>Home</a>
+            <img src={x2small} alt="Grupo" className={`${styles.logo}`} /> {/* Asegúrate de ajustar el tamaño adecuado */}
+            <span className={`${styles.date}`}>{currentDate}</span>
+        </header>
         </Router>
         </div>
     );

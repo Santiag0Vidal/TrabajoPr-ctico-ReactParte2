@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .HomeContainer {
     background-color: #7e4580;
     color: #ffffff;
     padding: 0%;
     text-align: center;
-    width: 100%; /* Ancho al 100% del contenedor padre */
+    width: 100%;/* Ancho al 100% del contenedor padre */
     height: 100%; /* Altura al 100% del viewport */
 }   
