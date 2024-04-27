@@ -4,10 +4,13 @@
 @import "tailwindcss/utilities";
 
 .HomeContainer {
-    background-color: #7e4580;
+
+  @apply bg-gray-500 ;
+
+    /*background-color: #7e4580;
     color: #ffffff;
     padding: 0%;
-    text-align: center;
-    width: 100%;/* Ancho al 100% del contenedor padre */
-    height: 100%; /* Altura al 100% del viewport */
+    /*text-align: center;
+    width: 100%;
+    height: 100%; */
 }   
