@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import SearchInput from '../../Components/SearchInput/SearchInput';
-import ElementList from '../../Components/ElementList/ElementList';
 import styles from './Home.module.css';
-import 'tailwindcss/tailwind.css';
 import redondos2 from '../../assets/redondos2.webp';
 import charly from '../../assets/Charly.webp';
 import sumo from '../../assets/sumo.png';
@@ -29,34 +27,30 @@ function Home() {
         console.log('Navigating to details of banda with ID:', bandaId);
         navigate(`${ROUTES.element}/${bandaId}`);
     };
-/*
-    // Encontre la banda con ID 1
-    const banda = bandas.find(b => b.id === 1) || {};
-*/
-return (
-    <div className={styles.HomeContainer}>
-        <Header />
-        <SearchInput onSearch={(searchTerm) => console.log('Búsqueda:', searchTerm)} />
-        <div className="flex flex-wrap justify-center">
-            {bandas.map(banda => (
-                <div key={banda.id} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img className="rounded-t-lg" src={banda.imagen} alt={banda.nombre} />
-                    </a>
-                    <div className="p-5">
+
+    return (
+        <div className={styles.HomeContainer}>
+            <Header />
+            <SearchInput onSearch={(searchTerm) => console.log('Búsqueda:', searchTerm)} />
+            <div className="flex flex-wrap justify-center">
+                {bandas.map(banda => (
+                    <div key={banda.id} className={styles.bandaCard}>
                         <a href="#">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{banda.nombre}</h5>
+                            <img className={styles.bandaImage} src={banda.imagen} alt={banda.nombre} />
                         </a>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{banda.biografia}</p>
-                        <Button text="Ver más" onClick={() => onClickElementHandler(banda.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"/>
+                        <div className="p-5">
+                            <a href="#">
+                                <h5 className={styles.bandaTitle}>{banda.nombre}</h5>
+                            </a>
+                            <p className={styles.bandaDescription}>{banda.biografia}</p>
+                            <Button text="Ver más" onClick={() => onClickElementHandler(banda.id)} className={styles.verMasButton}/>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+            <Footer />
         </div>
-       {/* <ElementList /> */}
-        <Footer />
-    </div>
-);
+    );
 }
 
 export default Home;
