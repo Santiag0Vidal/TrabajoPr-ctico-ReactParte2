@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './ElementList.module.css'; // Importa los estilos desde ElementList.module.css
 
 const ElementList = () => {
     const [elements, setElements] = useState([]);
@@ -12,11 +13,11 @@ const ElementList = () => {
     }, []);
 
     return (
-        <div className="grid grid-cols-3 gap-4">
+        <div className={styles.grid}>
             {elements.map(element => (
                 <Link to={`/details/${element.id}`} key={element.id}>
-                    <div className="border border-gray-300 p-4 rounded-lg">
-                        <h3 className="text-lg font-bold">{element.nombre}</h3>
+                    <div className={styles.elementContainer}>
+                        <h3 className={styles.elementTitle}>{element.nombre}</h3>
                         {/* Otras informaciones */}
                     </div>
                 </Link>
