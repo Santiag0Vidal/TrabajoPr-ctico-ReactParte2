@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import SearchInput from '../../Components/SearchInput/SearchInput';
-import styles from './Home.module.css';
+import styles from './Home.module.css'; // Importa estilos desde Home.module.css
+import ElementList from '../../Components/ElementList/ElementList'; // Importa el componente ElementList
 import redondos2 from '../../assets/redondos2.webp';
 import charly from '../../assets/Charly.webp';
 import sumo from '../../assets/sumo.png';
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../const/routes";
 import Button from '../../Components/Button/Button';
-
 
 function Home() {
     const [bandas, setBandas] = useState([]);
@@ -33,6 +33,9 @@ function Home() {
             <Header />
             <SearchInput onSearch={(searchTerm) => console.log('Búsqueda:', searchTerm)} />
             <div className="flex flex-wrap justify-center">
+                {/* Línea donde se renderiza el componente ElementList */}
+               
+                {/* Aquí se renderiza el resto de los elementos */}
                 {bandas.map(banda => (
                     <div key={banda.id} className={styles.bandaCard}>
                         <a href="#">
