@@ -10,12 +10,16 @@ import { Link } from "react-router-dom";
 
 function Home() {
     const [bandas, setBandas] = useState([]);
+    const [filteredBandas, setFilteredBandas] = useState([]); // Estado para las bandas filtradas
     const navigate = useNavigate();
 
     useEffect(() => {
         fetch('/mocks/bandas.json')
             .then(response => response.json())
-            .then(data => setBandas(data))
+            .then(data => {
+                setBandas(data);
+                setFilteredBandas(data); // Inicializa filteredBandas con todas las bandas
+            })
             .catch(error => console.error('Error fetching bandas:', error));
     }, []);
 
@@ -25,15 +29,24 @@ function Home() {
         navigate(`${ROUTES.element}/${bandaId}`);
     };
 
+    // Función para filtrar las bandas por nombre
+    const handleSearch = (searchTerm) => {
+        const filtered = bandas.filter(banda =>
+            banda.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredBandas(filtered);
+    };
+
     return (
         <div className={styles.HomeContainer}>
             <Header />
             
             <div className={styles.searchContainer}>
-                <SearchInput onSearch={(searchTerm) => console.log('Búsqueda:', searchTerm)} />
+                {/* Pasar bandas y setFilteredBandas como props al componente SearchInput */}
+                <SearchInput bandas={bandas} setFilteredBandas={setFilteredBandas} onSearch={handleSearch} />
             </div>
             <div className="flex flex-wrap justify-center">
-                {bandas.map(banda => (
+                {filteredBandas.map(banda => ( // Usar filteredBandas en lugar de bandas
                     <div key={banda.id} className={styles.bandaCard}>
                         <Link to={`${ROUTES.element.replace(':id', banda.id)}`}>
                             <img className={styles.bandaImage} src={banda.imagen} alt={banda.nombre} />

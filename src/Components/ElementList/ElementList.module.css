@@ -4,13 +4,14 @@
 @import "tailwindcss/utilities";
 
 .grid {
-  @apply grid-cols-3 gap-4;
-}
-
-.elementContainer {
-  @apply border-gray-300 p-4 rounded-lg;
-}
-
-.elementTitle {
-  @apply text-lg font-bold;
-}
+    @apply grid grid-cols-3 gap-4;
+  }
+  
+  .elementContainer {
+    @apply border border-gray-300 p-4 rounded-lg;
+  }
+  
+  .elementTitle {
+    @apply text-lg font-bold;
+  }
+  

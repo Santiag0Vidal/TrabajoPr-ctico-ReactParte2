@@ -18,6 +18,7 @@ const ElementList = () => {
                 <Link to={`/details/${element.id}`} key={element.id}>
                     <div className={styles.elementContainer}>
                         <h3 className={styles.elementTitle}>{element.nombre}</h3>
+                    
                     </div>
                 </Link>
             ))}
