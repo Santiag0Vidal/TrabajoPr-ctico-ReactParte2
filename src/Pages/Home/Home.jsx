@@ -3,13 +3,10 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import SearchInput from '../../Components/SearchInput/SearchInput';
 import styles from './Home.module.css'; // Importa estilos desde Home.module.css
-import ElementList from '../../Components/ElementList/ElementList'; // Importa el componente ElementList
-import redondos2 from '../../assets/redondos2.webp';
-import charly from '../../assets/Charly.webp';
-import sumo from '../../assets/sumo.png';
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../const/routes";
 import Button from '../../Components/Button/Button';
+import { Link } from "react-router-dom";
 
 function Home() {
     const [bandas, setBandas] = useState([]);
@@ -31,23 +28,19 @@ function Home() {
     return (
         <div className={styles.HomeContainer}>
             <Header />
-            <SearchInput onSearch={(searchTerm) => console.log('Búsqueda:', searchTerm)} />
+            
+            <div className={styles.searchContainer}>
+                <SearchInput onSearch={(searchTerm) => console.log('Búsqueda:', searchTerm)} />
+            </div>
             <div className="flex flex-wrap justify-center">
-                {/* Línea donde se renderiza el componente ElementList */}
-               
-                {/* Aquí se renderiza el resto de los elementos */}
                 {bandas.map(banda => (
                     <div key={banda.id} className={styles.bandaCard}>
-                        <a href="#">
+                        <Link to={`${ROUTES.element.replace(':id', banda.id)}`}>
                             <img className={styles.bandaImage} src={banda.imagen} alt={banda.nombre} />
-                        </a>
-                        <div className="p-5">
-                            <a href="#">
-                                <h5 className={styles.bandaTitle}>{banda.nombre}</h5>
-                            </a>
-                            <p className={styles.bandaDescription}>{banda.biografia}</p>
-                            <Button text="Ver más" onClick={() => onClickElementHandler(banda.id)} className={styles.verMasButton}/>
-                        </div>
+                            <h5 className={styles.bandaTitle}>{banda.nombre}</h5>
+                        </Link>
+                        <p className={styles.bandaDescription}>{banda.biografia}</p>
+                        <Button text="Ver más" onClick={() => navigate(`${ROUTES.element.replace(':id', banda.id)}`)} className={styles.verMasButton}/>
                     </div>
                 ))}
             </div>
