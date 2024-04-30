@@ -15,7 +15,7 @@ const Footer = () => {
 
   <div class="w-full bg-black/20 p-4 text-center">
     © 2024 Copyright:
-    <a href="https://tw-elements.com/"> Programacion Web Avanzada</a>
+    <a href="https://github.com/Santiag0Vidal/trabajo_practico_react_parte2" target="_blank"> Programacion Web Avanzada</a>
   </div>
 </footer>
     
