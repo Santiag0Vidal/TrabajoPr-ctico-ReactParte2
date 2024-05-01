@@ -23,7 +23,7 @@ function Home() {
             .catch(error => console.error('Error fetching bandas:', error));
     }, []);
 
-    // Manejador modificado para aceptar un id de banda
+   
     const onClickElementHandler = (bandaId) => {
         console.log('Navigating to details of banda with ID:', bandaId);
         navigate(`${ROUTES.element}/${bandaId}`);

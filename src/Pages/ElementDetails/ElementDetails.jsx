@@ -3,11 +3,14 @@ import { useParams } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import style from "./ElementDetails.module.css";
-
+import { ROUTES } from "../../const/routes";
+import Button from '../../Components/Button/Button'; 
+import { useNavigate } from "react-router-dom";
 
 const ElementDetails = () => {
     const { id } = useParams();
     const [banda, setBanda] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`/mocks/bandas.json`)
@@ -25,24 +28,24 @@ const ElementDetails = () => {
             <Header />
             {banda ? (
                 <div>
-                    <div class="container my-24 mx-auto md:px-6">
-  <section class="mb-32">
+                    <div class={style.container}>
+  <section class={style.section}>
     <div
-      class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-      <div class="flex flex-wrap items-center">
-        <div class="hidden shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+      class={style.block}>
+      <div class={style.divImg}>
+        <div class={style.imageContainer}>
           <img src={banda.imagen} alt={banda.nombre}
-            class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
+            class={style.image} />
         </div>
-        <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
-          <div class="px-6 py-12 md:px-12">
-            <h2 class="mb-4 text-2xl font-bold">
+        <div class={style.textContainer}>
+          <div class={style.paragraph}>
+            <h2 class={style.title}>
             {banda.nombre}
             </h2>
-            <p class="mb-6 flex items-center font-bold uppercase text-danger dark:text-danger-500">
+            <p class={style.anioFor}>
               {banda.año_formacion}
             </p>
-            <p class="mb-6 text-neutral-500 dark:text-neutral-300">
+            <p class={style.membersText}>
               Miembros:  {banda.miembros.map((miembro, index) => (
                 <span key={index}>
                   {miembro}
@@ -50,7 +53,7 @@ const ElementDetails = () => {
                 </span>
               ))}
             </p>
-            <p class="text-neutral-500 dark:text-neutral-300">
+            <p class={style.bio}>
              {banda.biografia}
             </p>
           </div>
@@ -63,12 +66,13 @@ const ElementDetails = () => {
 
     
 
-<div class="container my-24 mx-auto md:px-6">
-  <section class="mb-32">
+<div class={style.container}>
+<section class={style.section}>
     <div
-      class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-      <div class="flex flex-wrap items-center">
-        <div class="hidden shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+      class={style.block}>
+      <div class={style.divImg}>
+      <div class={style.imageContainer}>
+        {/*a este iframe no le aplicamos tailwind porque lo sacamos de youtube*/ }
         <iframe 
         width="560" 
         height="315" 
@@ -76,15 +80,17 @@ const ElementDetails = () => {
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+        </iframe>
         </div>
-        <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
-          <div class="px-6 py-12 md:px-12">
-            <h2 class="mb-4 text-2xl font-bold">
+        <div class={style.textContainer}>
+        <div class={style.paragraph}>
+            <h2 class={style.title}>
             Primer disco:
             </h2>
           
-            <p class="text-neutral-500 dark:text-neutral-300">
+            <p class={style.bio}>
              {banda.primer_disco}
             </p>
           </div>
@@ -92,6 +98,7 @@ const ElementDetails = () => {
       </div>
     </div>
   </section>
+  <Button text="Volver" onClick={() => navigate(ROUTES.home)} className={style.verMasButton}/>
 </div>
 
 
