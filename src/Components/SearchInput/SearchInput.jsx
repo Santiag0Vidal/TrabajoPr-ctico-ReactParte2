@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import style from "./SearchInput.module.css";
 
 const SearchInput = ({ bandas, setFilteredBandas }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -15,13 +16,15 @@ const SearchInput = ({ bandas, setFilteredBandas }) => {
     };
 
     return (
-        <input
-            type="text"
-            placeholder="Buscar..."
-            value={searchTerm}
-            onChange={handleChange}
-            className="border border-gray-400 p-2 rounded-lg"
-        />
+        <div className={style['input-container']}> 
+            <input
+                type="text"
+                placeholder="Buscar Banda"
+                value={searchTerm}  
+                onChange={handleChange}
+                className={style.input} 
+            />
+        </div>
     );
 };
 

@@ -1,28 +1,23 @@
-/*.HeaderContainer {
-    background-color: #80befc;
-    color: #ffffff;
-    padding: 2px;
-    text-align: center;
-    width: 100%;
-    height: 100%
-}*/
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.HeaderContainer {
+  @apply bg-gray-900 shadow-md; 
+}
 
 .header {
-  @apply bg-gray-800 text-white py-4 flex justify-between items-center;
+  @apply flex justify-between items-center py-4 px-8; 
 }
-
 
 .homeLink {
-  @apply ml-4 text-xl font-bold;
+  @apply text-white text-2xl font-bold hover:text-gray-300 ml-6;
 }
 
-
-
-.date {
-  @apply mr-4;
+.logo {
+  @apply h-16; 
 }
+
+.date { 
+  @apply text-gray-400 text-lg mr-6; 
+} 
