@@ -43,7 +43,12 @@ const ElementDetails = () => {
               {banda.año_formacion}
             </p>
             <p class="mb-6 text-neutral-500 dark:text-neutral-300">
-              Miembros:  {banda.miembros}
+              Miembros:  {banda.miembros.map((miembro, index) => (
+                <span key={index}>
+                  {miembro}
+                  {index !== banda.miembros.length - 1 && ", "}
+                </span>
+              ))}
             </p>
             <p class="text-neutral-500 dark:text-neutral-300">
              {banda.biografia}
@@ -67,7 +72,7 @@ const ElementDetails = () => {
         <iframe 
         width="560" 
         height="315" 
-        src="https://www.youtube.com/embed/PwmNExAF1zg?si=j1oiznQso3H_Sugb" 
+        src={banda.url} 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -80,7 +85,7 @@ const ElementDetails = () => {
             </h2>
           
             <p class="text-neutral-500 dark:text-neutral-300">
-             aca agregamos datos del primer disco en el mock???????????????????????? y el enlace del primer disco de cada banda para que con cada banda muestre el video de su primer disco??????????????????????????????????????
+             {banda.primer_disco}
             </p>
           </div>
         </div>
