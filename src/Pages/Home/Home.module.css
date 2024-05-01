@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* Home.module.css */
 
+/* Establecer un color de fondo con contraste */
 .HomeContainer {
-  @apply bg-gray-500 ;
-}   
+  @apply bg-gray-100; /* Utiliza un color de fondo que contraste con el blanco de las cards */
+}
 
+/* Estilo personalizado para las cards de bandas */
 .bandaCard {
-  @apply max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4 mx-2;
+  @apply max-w-md bg-white border border-gray-300 rounded-lg shadow-lg my-4 mx-2 transition-transform duration-300 transform hover:scale-105;
+  padding: 1.5rem; /* Agrega un espaciado interno de 1.5rem alrededor del contenido */
 }
 
 .bandaImage {
@@ -16,7 +16,7 @@
 }
 
 .bandaTitle {
-  @apply mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+  @apply text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-2;
 }
 
 .bandaDescription {
@@ -24,5 +24,5 @@
 }
 
 .verMasButton {
-  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full;
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2;
 }
