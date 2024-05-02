@@ -4,5 +4,7 @@
     "genero": "Rock",
     "año_formacion": 1972,
     "miembros": ["Carlos 'Charly' García"],
-    "biografia": "Carlos Alberto García Moreno, más conocido como Charly García, es un músico, compositor, pianista y productor argentino. Es considerado uno de los más importantes y respetados músicos de la historia del rock argentino."
-}
+    "biografia": "Carlos Alberto García Moreno, más conocido como Charly García, es un músico, compositor, pianista y productor argentino. Es considerado uno de los más importantes y respetados músicos de la historia del rock argentino.",
+    "imagen": "/assets/Charly.webp",
+    "primer_disco": "El primer álbum de Charly García como solista se llama Yendo de la cama al living. Fue lanzado en 1982, después de su tiempo con las bandas Sui Generis, La Máquina de Hacer Pájaros y Serú Girán. Este álbum es muy importante en la historia del rock argentino y marcó un nuevo rumbo en la carrera de García, consolidándolo como uno de los músicos más innovadores y significativos de América Latina.",
+    "url":"https://www.youtube.com/embed/ldgUatPszek?si=PVdSO5gTmlaJmyQv" }

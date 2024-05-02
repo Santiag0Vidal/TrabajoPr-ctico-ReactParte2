@@ -10,109 +10,85 @@ import { useNavigate } from "react-router-dom";
 const ElementDetails = () => {
     const { id } = useParams();
     const [banda, setBanda] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);//solo se pone en false cuando fetch termino con exito o error
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`/mocks/bandas.json`)
+        fetch(`/mocks/banda_${id}.json`)
             .then(response => response.json())
             .then(data => {
-                const result = data.find(b => b.id.toString() === id);
-                setBanda(result);
+                setBanda(data);
+                setIsLoading(false); // Datos cargados
+            })
+            .catch(error => {
+                console.error("Error fetching data: ", error);
+                setIsLoading(false); 
             });
     }, [id]);
-
-
-
     return (
         <div>
             <Header />
-            {banda ? (
-                <div>
-                    <div class={style.container}>
-  <section class={style.section}>
-    <div
-      class={style.block}>
-      <div class={style.divImg}>
-        <div class={style.imageContainer}>
-          <img src={banda.imagen} alt={banda.nombre}
-            class={style.image} />
-        </div>
-        <div class={style.textContainer}>
-          <div class={style.paragraph}>
-            <h2 class={style.title}>
-            {banda.nombre}
-            </h2>
-            <p class={style.anioFor}>
-              {banda.año_formacion}
-            </p>
-            <p class={style.membersText}>
-              Miembros:  {banda.miembros.map((miembro, index) => (
-                <span key={index}>
-                  {miembro}
-                  {index !== banda.miembros.length - 1 && ", "}
-                </span>
-              ))}
-            </p>
-            <p class={style.bio}>
-             {banda.biografia}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-
-    
-
-<div class={style.container}>
-<section class={style.section}>
-    <div
-      class={style.block}>
-      <div class={style.divImg}>
-      <div class={style.imageContainer}>
-        {/*a este iframe no le aplicamos tailwind porque lo sacamos de youtube*/ }
-        <iframe 
-        width="560" 
-        height="315" 
-        src={banda.url} 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-        </iframe>
-        </div>
-        <div class={style.textContainer}>
-        <div class={style.paragraph}>
-            <h2 class={style.title}>
-            Primer disco:
-            </h2>
-          
-            <p class={style.bio}>
-             {banda.primer_disco}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <Button text="Volver" onClick={() => navigate(ROUTES.home)} className={style.verMasButton}/>
-</div>
-
-
-
+            {isLoading ? (
+                <div className={style.redBoxStyle}>
+                    <p>Cargando datos de la banda...</p>
                 </div>
- ) : (
-    <div className={style.redBoxStyle}>
-        <p>No se encontró la información de la banda.</p>
-    </div>
-)}
-<Footer />
-</div>
-);
+            ) : banda ? (
+                <div className={style.container}>
+                    <section className={style.section}>
+                        <div className={style.block}>
+                            <div className={style.divImg}>
+                                <div className={style.imageContainer}>
+                                    <img src={banda.imagen} alt={banda.nombre} className={style.image} />
+                                </div>
+                                <div className={style.textContainer}>
+                                    <div className={style.paragraph}>
+                                        <h2 className={style.title}>{banda.nombre}</h2>
+                                        <p className={style.anioFor}>{banda.año_formacion}</p>
+                                        <p className={style.membersText}>
+                                            Miembros: {banda.miembros.join(", ")}
+                                        </p>
+                                        <p className={style.bio}>{banda.biografia}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className={style.section}>
+                        <div className={style.block}>
+                            <div className={style.divImg}>
+                                <div className={style.imageContainer}>
+                                    <iframe 
+                                        width="560" 
+                                        height="315" 
+                                        src={banda.url} 
+                                        title="YouTube video player" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <div className={style.textContainer}>
+                                    <div className={style.paragraph}>
+                                        <h2 className={style.title}>Primer disco:</h2>
+                                        <p className={style.bio}>{banda.primer_disco}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <Button text="Volver" onClick={() => navigate(ROUTES.home)} className={style.verMasButton}/>
+                </div>
+            ) : (
+                <div className={style.redBoxStyle}>
+                    <p>No se encontró la información de la banda.</p>
+                </div>
+            )}
+            <Footer />
+        </div>
+    );
 }
 
 export default ElementDetails;
+
 

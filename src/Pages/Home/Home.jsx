@@ -23,11 +23,6 @@ function Home() {
             .catch(error => console.error('Error fetching bandas:', error));
     }, []);
 
-   
-    const onClickElementHandler = (bandaId) => {
-        console.log('Navigating to details of banda with ID:', bandaId);
-        navigate(`${ROUTES.element}/${bandaId}`);
-    };
 
     // Función para filtrar las bandas por nombre
     const handleSearch = (searchTerm) => {
@@ -42,11 +37,11 @@ function Home() {
             <Header />
             
             <div className={styles.searchContainer}>
-                {/* Pasar bandas y setFilteredBandas como props al componente SearchInput */}
+                
                 <SearchInput bandas={bandas} setFilteredBandas={setFilteredBandas} onSearch={handleSearch} />
             </div>
             <div className="flex flex-wrap justify-center">
-                {filteredBandas.map(banda => ( // Usar filteredBandas en lugar de bandas
+                {filteredBandas.map(banda => ( 
                     <div key={banda.id} className={styles.bandaCard}>
                         <Link to={`${ROUTES.element.replace(':id', banda.id)}`}>
                             <img className={styles.bandaImage} src={banda.imagen} alt={banda.nombre} />

@@ -4,5 +4,8 @@
     "genero": "Rock",
     "año_formacion": 1982,
     "miembros": ["Gustavo Cerati", "Zeta Bosio", "Charly Alberti"],
-    "biografia": "Soda Stereo fue una banda de rock argentina, considerada una de las más influyentes y exitosas de la música en español. La banda se formó en 1982 y se disolvió en 1997 tras una serie de exitosos álbumes y giras."
+    "biografia": "Soda Stereo fue una banda de rock argentina, considerada una de las más influyentes y exitosas de la música en español. La banda se formó en 1982 y se disolvió en 1997 tras una serie de exitosos álbumes y giras.",
+    "imagen": "/assets/soda.jpg",
+    "primer_disco": "Soda Stereo es el título del álbum debut de estudio homónimo grabado por la banda de rock en español argentina Soda Stereo. El álbum en sí es único dentro de la carrera de Soda Stereo. Las letras presentan un estilo humorístico e irónico, a tono con el movimiento de la música divertida que había irrumpido en la escena musical argentina a inicios de los '80 y que tuvo a los propios Soda Stereo como protagonistas junto a Los Twist, Viuda e Hijas de Roque Enroll, Virus y Suéter, entre otros. Por tanto, Soda Stereo es un álbum con un sonido y aire marcadamente distinto al del resto de su discografía",
+    "url": "https://www.youtube.com/embed/PwmNExAF1zg?si=14ZOpAAGTO-tVh2M" 
 }

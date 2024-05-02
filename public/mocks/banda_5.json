@@ -4,5 +4,7 @@
     "genero": "New Wave",
     "año_formacion": 1979,
     "miembros": ["Marcelo Moura", "Julio Moura", "Federico Moura", "Daniel Sbarra", "Enrique Mugetti"],
-    "biografia": "Virus es una banda de new wave y synth-pop argentina formada en 1979. Es una de las bandas más importantes e influyentes de la historia del rock argentino."
-}
+    "biografia": "Virus es una banda de new wave y synth-pop argentina formada en 1979. Es una de las bandas más importantes e influyentes de la historia del rock argentino.",
+    "imagen": "/assets/virus.jpg",
+    "primer_disco": "«Wadu-Wadu» (1981), el primer LP, contiene 15 temas, con una duración promedio de 2'30 cada uno. El letrista principal del grupo fue Roberto Jacoby, quien desarrolla el concepto de \"Estrategia de la alegría\". En una época en la cual el rock argentino se ocupaba de temas sociales y \"serios\", fueron acusados de frívolos, por la música bailable con letras irónicas",
+    "url": "https://www.youtube.com/embed/Erbb0KWRu3w?si=VD7ZUQ-gry7Fm_Pu"}

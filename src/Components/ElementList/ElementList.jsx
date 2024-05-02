@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './ElementList.module.css'; // Importa los estilos desde ElementList.module.css
+import styles from './ElementList.module.css'; 
 
 const ElementList = () => {
     const [elements, setElements] = useState([]);

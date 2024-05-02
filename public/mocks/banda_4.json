@@ -4,5 +4,7 @@
     "genero": "Rock",
     "año_formacion": 1981,
     "miembros": ["Luca Prodan", "Diego Arnedo", "Ricardo Mollo", "Stephanie Nuttal", "Alejandro Sokol"],
-    "biografia": "Sumo fue una banda de rock argentina formada en 1981 por el italiano Luca Prodan. La banda se disolvió en 1988, poco después de la muerte de su líder. Son considerados una de las bandas más influyentes de la historia del rock en Argentina."
-}
+    "biografia": "Sumo fue una banda de rock argentina formada en 1981 por el italiano Luca Prodan. La banda se disolvió en 1988, poco después de la muerte de su líder. Son considerados una de las bandas más influyentes de la historia del rock en Argentina.",
+    "imagen": "/assets/sumo.png",
+    "primer_disco": "Corpiños en la madrugada es el álbum debut (originalmente lanzado como demo) de la banda argentina de post punk Sumo grabado el 30 de octubre de 1983 en Estudios del Jardín. Contiene varios de los hits que la banda volvería a grabar posteriormente junto a perlas que brillaban en los recitales de la banda pese a no haber integrado nunca los discos oficiales: Night & Day (la primera canción que compusieron en conjunto como banda), Fuck You (su primer himno punk, con el que solían cerrar sus recitales) y la contundente «Teléfonos /White Trash», con una voz apagada y abatida de Luca que luego salta a un sonido ska demoledor",
+    "url": "https://www.youtube.com/embed/0MjKnQJ6o6s?si=-UYFQaoNq8WB3Pa2"}
