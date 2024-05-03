@@ -6,20 +6,13 @@ import { useNavigate } from "react-router-dom";
 import Button from '../../Components/Button/Button';
 import SearchInput from '../../Components/SearchInput/SearchInput'; // Importa el componente SearchInput
 
-const ElementList = ({ redirectToDetails }) => {
-    const [elements, setElements] = useState([]);
-    const [filteredElements, setFilteredElements] = useState([]);
+const ElementList = ({ elements }) => {
+    const [filteredElements, setFilteredElements] = useState(elements);
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('/mocks/bandas.json')
-            .then(response => response.json())
-            .then(data => {
-                setElements(data);
-                setFilteredElements(data); // Inicializa filteredElements con todos los elementos
-            })
-            .catch(error => console.error('Error fetching elements:', error));
-    }, []);
+        setFilteredElements(elements);
+    }, [elements]);
 
     return (
         <div>
