@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import styles from './SearchInput.module.css';
 
-const SearchInput = ({ elements, setFilteredElements }) => {
+const SearchInput = ({ setFilteredElements }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleChange = (event) => {
         const term = event.target.value;
         setSearchTerm(term);
-        // Filtrar los elementos por nombre de banda
-        const filtered = elements.filter(element =>
-            element.nombre.toLowerCase().includes(term.toLowerCase())
-        );
-        // Actualizar la lista de elementos filtrados
-        setFilteredElements(filtered);
+        // Pasar el término de búsqueda al componente padre
+        setFilteredElements(term);
     };
 
     return (

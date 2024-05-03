@@ -1,34 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ElementList.module.css'; // Importa los estilos desde ElementList.module.css
 import { ROUTES } from "../../const/routes";
-import { useNavigate } from "react-router-dom";
 import Button from '../../Components/Button/Button';
-import SearchInput from '../../Components/SearchInput/SearchInput'; // Importa el componente SearchInput
 
 const ElementList = ({ elements }) => {
-    const [filteredElements, setFilteredElements] = useState(elements);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        setFilteredElements(elements);
-    }, [elements]);
-
     return (
         <div>
-            <SearchInput elements={elements} setFilteredElements={setFilteredElements} />
             <div className="flex flex-wrap justify-center">
-                {filteredElements.length === 0 ? (
+                {elements.length === 0 ? (
                     <div>No se encontraron elementos para su búsqueda.</div>
                 ) : (
-                    filteredElements.map(element => (
+                    elements.map(element => (
                         <div key={element.id} className={styles.bandaCard}>
                             <Link to={`${ROUTES.element.replace(':id', element.id)}`}>
                                 <img src={element.imagen} alt={element.nombre} className={styles.bandaImage} />
                                 <h5 className={styles.bandaTitle}>{element.nombre}</h5>
                             </Link>
                             <p className={styles.bandaDescription}>{element.biografia}</p>
-                            <Button text="Ver más" onClick={() => navigate(`${ROUTES.element.replace(':id', element.id)}`)} className={styles.verMasButton}/>
+                            <Button text="Ver más" to={`${ROUTES.element.replace(':id', element.id)}`} className={styles.verMasButton}/>
                         </div>
                     ))
                 )}
