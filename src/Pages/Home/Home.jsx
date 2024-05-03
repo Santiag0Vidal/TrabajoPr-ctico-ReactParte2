@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import ElementList from '../../Components/ElementList/ElementList';
-import SearchInput from '../../Components/SearchInput/SearchInput'; // Importa el componente SearchInput
+import SearchInput from '../../Components/SearchInput/SearchInput'; 
 import style from './Home.module.css';
 
 function Home() {
@@ -14,13 +14,13 @@ function Home() {
             .then(response => response.json())
             .then(data => {
                 setElements(data);
-                setFilteredElements(data); // Inicializa filteredElements con todos los elementos
+                setFilteredElements(data); 
             })
             .catch(error => console.error('Error fetching bandas:', error));
     }, []);
 
     const handleSearch = (searchTerm) => {
-        if (typeof searchTerm === 'string') { // Asegurarse de que searchTerm sea una cadena de texto
+        if (typeof searchTerm === 'string') { 
             const filtered = elements.filter(element =>
                 element.nombre.toLowerCase().includes(searchTerm.toLowerCase())
             );

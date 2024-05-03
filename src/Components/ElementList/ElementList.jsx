@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate desde react-router-dom
 import styles from './ElementList.module.css'; // Importa los estilos desde ElementList.module.css
 import { ROUTES } from "../../const/routes";
-import Button from '../../Components/Button/Button';
+import Button from '../../Components/Button/Button'; // Importa el componente Button
 
 const ElementList = ({ elements }) => {
+    const navigate = useNavigate(); // Utiliza useNavigate aquí
+
     return (
         <div>
             <div className="flex flex-wrap justify-center">
@@ -18,7 +20,7 @@ const ElementList = ({ elements }) => {
                                 <h5 className={styles.bandaTitle}>{element.nombre}</h5>
                             </Link>
                             <p className={styles.bandaDescription}>{element.biografia}</p>
-                            <Button text="Ver más" to={`${ROUTES.element.replace(':id', element.id)}`} className={styles.verMasButton}/>
+                            <Button text="Ver más" onClick={() => navigate(`${ROUTES.element.replace(':id', element.id)}`)} className={styles.verMasButton}/> 
                         </div>
                     ))
                 )}
