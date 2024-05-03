@@ -3,15 +3,25 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.grid {
-    @apply grid grid-cols-3 gap-4;
-  }
-  
-  .elementContainer {
-    @apply border border-gray-300 p-4 rounded-lg;
-  }
-  
-  .elementTitle {
-    @apply text-lg font-bold;
-  }
-  
+/* Estilo personalizado para las cards de bandas */
+.bandaCard {
+  @apply max-w-md bg-white border border-gray-300 rounded-lg shadow-lg my-4 mx-2 transition-transform duration-300 transform hover:scale-105;
+  @apply p-6; /* Aplica un espaciado interno de 1.5rem alrededor del contenido */
+  @apply text-gray-800; /* Color de texto para mejorar la legibilidad */
+}
+
+.bandaImage {
+  @apply w-full h-64 object-cover rounded-t-lg;
+}
+
+.bandaTitle {
+  @apply text-2xl font-bold tracking-tight mt-2; /* Se elimina el color del texto para heredar el color por defecto */
+}
+
+.bandaDescription {
+  @apply mb-3 font-normal text-gray-700 dark:text-gray-400;
+}
+
+.verMasButton {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2;
+}

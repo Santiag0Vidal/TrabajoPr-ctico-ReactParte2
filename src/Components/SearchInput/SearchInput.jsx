@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
-import style from "./SearchInput.module.css";
+import styles from './SearchInput.module.css';
 
-const SearchInput = ({ bandas, setFilteredBandas }) => {
+const SearchInput = ({ elements, setFilteredElements }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleChange = (event) => {
         const term = event.target.value;
         setSearchTerm(term);
-        // Filtrar las bandas por nombre
-        const filtered = bandas.filter(banda =>
-            banda.nombre.toLowerCase().includes(term.toLowerCase())
+        // Filtrar los elementos por nombre de banda
+        const filtered = elements.filter(element =>
+            element.nombre.toLowerCase().includes(term.toLowerCase())
         );
-        // Actualizar la lista de bandas filtradas
-        setFilteredBandas(filtered);
+        // Actualizar la lista de elementos filtrados
+        setFilteredElements(filtered);
     };
 
     return (
-        <div className={style['input-container']}> 
+        <div className={styles.searchContainer}>
             <input
                 type="text"
                 placeholder="Buscar Banda"
-                value={searchTerm}  
+                value={searchTerm}
                 onChange={handleChange}
-                className={style.input} 
+                className={styles.input}
             />
         </div>
     );

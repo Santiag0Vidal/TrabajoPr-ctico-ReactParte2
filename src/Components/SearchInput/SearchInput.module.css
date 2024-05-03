@@ -3,7 +3,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.input-container {
+.searchContainer {
   @apply flex items-center justify-center w-1/5 mx-auto pt-10;
 }
 
