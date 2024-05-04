@@ -1,3 +1,4 @@
+// ElementDetails.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
@@ -6,11 +7,13 @@ import style from "./ElementDetails.module.css";
 import { ROUTES } from "../../const/routes";
 import Button from '../../Components/Button/Button'; 
 import { useNavigate } from "react-router-dom";
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import PDF from '../../Components/PDF/PDF'; // Importa el componente PDF
 
 const ElementDetails = () => {
     const { id } = useParams();
     const [banda, setBanda] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);//solo se pone en false cuando fetch termino con exito o error
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,13 +21,14 @@ const ElementDetails = () => {
             .then(response => response.json())
             .then(data => {
                 setBanda(data);
-                setIsLoading(false); // Datos cargados
+                setIsLoading(false);
             })
             .catch(error => {
                 console.error("Error fetching data: ", error);
-                setIsLoading(false); 
+                setIsLoading(false);
             });
     }, [id]);
+
     return (
         <div>
             <Header />
@@ -62,11 +66,11 @@ const ElementDetails = () => {
                                         height="315" 
                                         src={banda.url} 
                                         title="YouTube video player" 
-                                        frameborder="0" 
+                                        frameBorder="0" 
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" 
-                                        allowfullscreen>
-                                    </iframe>
+                                        referrerPolicy="strict-origin-when-cross-origin" 
+                                        allowFullScreen
+                                    />
                                 </div>
                                 <div className={style.textContainer}>
                                     <div className={style.paragraph}>
@@ -77,6 +81,11 @@ const ElementDetails = () => {
                             </div>
                         </div>
                     </section>
+                    <PDFDownloadLink document={<PDF banda={banda} />} fileName="banda.pdf">
+                        {({ blob, url, loading, error }) => (
+                            <Button text={loading ? 'Generando PDF...' : 'Descargar PDF'} className={style.verMasButton}/>
+                        )}
+                    </PDFDownloadLink>
                     <Button text="Volver" onClick={() => navigate(ROUTES.home)} className={style.verMasButton}/>
                 </div>
             ) : (
@@ -90,5 +99,3 @@ const ElementDetails = () => {
 }
 
 export default ElementDetails;
-
-
