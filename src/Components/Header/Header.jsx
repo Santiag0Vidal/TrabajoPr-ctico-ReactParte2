@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className={styles.HeaderContainer}>
             <header className={styles.header}>
-                <Link to={ROUTES.home} className={styles.homeLink}>Home</Link>
+                <Link to={ROUTES.home} className={styles.homeLink}>Bandas</Link>
                 <img src={x2small} alt="Grupo" className={styles.logo} /> 
                 <span className={styles.date}>{currentDate}</span>
             </header>
