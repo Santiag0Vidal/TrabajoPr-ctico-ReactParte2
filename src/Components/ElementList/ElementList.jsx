@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate desde react-router-dom
-import styles from './ElementList.module.css'; // Importa los estilos desde ElementList.module.css
+import { Link, useNavigate } from 'react-router-dom'; 
+import styles from './ElementList.module.css'; 
 import { ROUTES } from "../../const/routes";
-import Button from '../../Components/Button/Button'; // Importa el componente Button
+import Button from '../../Components/Button/Button'; 
 
 const ElementList = ({ elements }) => {
-    const navigate = useNavigate(); // Utiliza useNavigate aquí
+    const navigate = useNavigate(); 
 
     return (
         <div>
