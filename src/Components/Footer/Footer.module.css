@@ -1,31 +1,24 @@
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-
 .footerContainer {
     @apply bg-gray-900 shadow-md flex justify-between items-center py-4 px-8 text-white;
-  }
-  
+}
 
-  .groupName {
+.groupName {
     @apply font-bold text-lg text-gray-300 hover:text-white;
-  }
-  
-  .logo {
-    @apply h-12 w-auto;
-  }
-  
-  .date {
-    @apply text-sm text-gray-400 ml-auto;
-  }
-  
-  .container {
+}
+
+.icon {
+    @apply text-2xl text-gray-300 mx-2;
+}
+
+.container {
     @apply p-4;
-  }
-  
-  .copyright {
-    @apply bg-gray-800/20 p-4 text-center text-gray-400 text-sm;
-  }
-  
+}
+
+.githubLink,
+.reactLink {
+    @apply flex items-center;
+}

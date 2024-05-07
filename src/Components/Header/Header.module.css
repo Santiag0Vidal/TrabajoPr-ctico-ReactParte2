@@ -3,21 +3,30 @@
 @import "tailwindcss/utilities";
 
 .HeaderContainer {
-  @apply bg-gray-900 shadow-md; 
+  @apply bg-gray-900 shadow-md py-4;
 }
 
 .header {
-  @apply flex justify-between items-center py-4 px-8; 
+  @apply flex justify-between items-center px-8;
 }
 
 .homeLink {
-  @apply text-white text-2xl font-bold hover:text-gray-300 ml-6;
+  @apply text-white text-3xl font-extrabold hover:text-gray-300 ml-6;
+}
+
+.logoContainer {
+  @apply flex items-center;
 }
 
 .logo {
-  @apply h-16; 
+  @apply h-16;
 }
 
-.date { 
-  @apply text-gray-400 text-lg mr-6; 
-} 
+/* Estilos para los iconos de redes sociales */
+.socialIcons {
+  @apply flex items-center mr-6;
+}
+
+.socialIcon {
+  @apply text-white text-xl mr-3;
+}

@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Estilo personalizado para las cards de bandas */
-/* Estilo personalizado para las cards de bandas */
 .bandaCard {
   @apply max-w-md bg-white border border-gray-400 rounded-lg shadow-lg my-4 mx-2 transition-transform duration-300 transform hover:scale-105;
-  @apply p-6; /* Aplica un espaciado interno de 1.5rem alrededor del contenido */
-  @apply text-gray-800; /* Color de texto para mejorar la legibilidad */
+  @apply p-6; 
+  @apply text-gray-800; 
 }
 
 .bandaImage {
@@ -16,7 +13,7 @@
 }
 
 .bandaTitle {
-  @apply text-2xl font-bold tracking-tight mt-2; /* Se elimina el color del texto para heredar el color por defecto */
+  @apply text-2xl font-bold tracking-tight mt-2;
 }
 
 .bandaDescription {
