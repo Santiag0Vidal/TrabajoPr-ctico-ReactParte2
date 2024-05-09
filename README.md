@@ -24,13 +24,12 @@ Esta web es una plataforma para explorar información sobre diversas bandas de m
 
 ### Instrucciones
 Para poder visualizar correctamente este proyecto debe seguir las siguientes instrucciones:
-1. Instalar Node.js y npm: Node.js es un entorno de ejecución para JavaScript, y npm es el sistema de gestión de paquetes para Node.js. Se puede descargar e instalar Node.js desde su sitio web oficial: https://nodejs.org/en
-Descargar la ultima version estable e instalar
+1. Instalar Node.js y npm: Node.js es un entorno de ejecución para JavaScript, y npm es el sistema de gestión de paquetes para Node.js. Se puede descargar e instalar Node.js desde su sitio web oficial: https://nodejs.org/en, descargar la ultima version estable e instalar. 
 Una vez instalado Node.js, npm también se instalará automáticamente en tu sistema.
  2. Después de completar la instalación, se puede verificar que Node.js y npm se hayan instalado correctamente abriendo una ventana de terminal (cmd o PowerShell) y ejecutando los siguientes comandos:
 
-<b>node -v </b>
- <b>npm -v </b>
+<p><b>node -v </b> </p>
+<p> <b>npm -v </b> </p>
 
 Estos comandos imprimirán las versiones instaladas de Node.js y npm.
 
