@@ -1,5 +1,4 @@
 # Nombre del grupo:
-  Grupo:
   ![Logo del Grupo](./src/assets/x2small.png)
 
 ## Integrantes del grupo: 
@@ -10,13 +9,15 @@
 Bandas x2
 
 ## Descripcion del proyecto:
-Esta web es una plataforma interactiva para explorar información sobre diversas bandas de música. Utiliza una serie de mocks para representar la información de las bandas y proporcionar a los usuarios detalles relevantes sobre cada una de ellas.
+Esta web es una plataforma para explorar información sobre diversas bandas de música. Utiliza una serie de mocks para representar la información de las bandas y proporcionar a los usuarios detalles relevantes sobre cada una de ellas.
 
 ## Tecnologías Utilizadas
 - React: Utilizado para construir la interfaz de usuario con componentes reutilizables y gestionar el estado de la aplicación.
 -React Router: Maneja la navegación entre las diferentes páginas de la aplicación, permitiendo un flujo de usuario fluido y dinámico sin recargar la página.
 -Fetch API: Empleado para cargar los datos de los mocks representando llamadas a una API real.
 -CSS Modules: Proporcionan estilos encapsulados para evitar conflictos y mantener la coherencia visual en toda la aplicación.
+
+Para implementar la descarga de la informacion de cada banda en formato pdf utilizamos <<react-pdf>>, que es una biblioteca que permite generar documentos PDF en aplicaciones de React tanto en el cliente como en el servidor. Al no utilizar una API externa la biblioteca react-pdf nos permite una integración sencilla y efectiva dentro de la aplicación React, proporcionando una experiencia de usuario fluida y rápida sin tener que depender de servicios externos o del servidor.
 
 ## Instalación
 
@@ -58,6 +59,19 @@ npm i
 Con este comando npm lee el archivo package.json en el directorio actual y busca la sección dependencies y devDependencies. Luego, descarga e instala todas las dependencias listadas en estas secciones en una carpeta llamada node_modules en el directorio del proyecto.
 Al ejecutar el comando la terminal se verá asi, puede tardar unos minutos:
 ![npmi](./src/assets/npmi.JPG)
+
+8. Finalizado estos pasos se puede ejecutar el comando:
+
+npm start
+
+y se inciciara la aplicacion.
+
+Deberia visualizarse de la siguiente manera:
+![app](./src/assets/VisualizacionApp.JPG)
+
+Y al acceder a la informacion de una banda en especifico, deberia verse asi:
+
+![info](./src/assets/infoBanda.JPG)
 
 
 
