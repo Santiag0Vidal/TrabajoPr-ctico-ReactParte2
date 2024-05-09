@@ -49,7 +49,7 @@ Instalarlo y luego ejecutar el siguiente comando en la terminal:
 
 Este comando imprime la versión instalada de Git. Si ves la versión correctamente, significa que Git se ha instalado correctamente en tu sistema.
 
-4. Crear una carpeta en donde dejar el proyecto 
+4. Crear una carpeta en donde dejar el proyecto
 
 5. Abrir la terminal (cmd), moverse a la carpeta recien creada
 Ejemplo: si cree la carpeta Proyectos voy a ejecutar el siguiente comando:
@@ -57,7 +57,7 @@ Ejemplo: si cree la carpeta Proyectos voy a ejecutar el siguiente comando:
 
 6. Clonar el repositorio con el comando:
 
-<p><b> git clone https://github.com/Santiag0Vidal/trabajo_practico_react_part </p></b>
+<p><b> git clone https://github.com/Santiag0Vidal/trabajo_practico_react_parte2.git </p></b>
 
 7. Luego ejecutar:
 
@@ -65,7 +65,7 @@ Ejemplo: si cree la carpeta Proyectos voy a ejecutar el siguiente comando:
 
 Con este comando npm lee el archivo package.json en el directorio actual y busca la sección dependencies y devDependencies. Luego, descarga e instala todas las dependencias listadas en estas secciones en una carpeta llamada node_modules en el directorio del proyecto.
 Al ejecutar el comando la terminal se verá asi, puede tardar unos minutos: 
-![npmi](./src/assets/npmi.JPG)
+<p> ![npmi](./src/assets/npmi.JPG) </p>
 
 8. Finalizados estos pasos se puede ejecutar el comando:
 
@@ -80,7 +80,10 @@ Y al acceder a la informacion de una banda en especifico, deberia verse asi:
 
 ![info](./src/assets/infoBanda.JPG)
 
+- El formato del PDF se deberia ver asi:
 
+
+![pdf](./src/assets/pdf.JPG)
 
 
 
