@@ -19,16 +19,48 @@ Esta web es una plataforma interactiva para explorar información sobre diversas
 -CSS Modules: Proporcionan estilos encapsulados para evitar conflictos y mantener la coherencia visual en toda la aplicación.
 
 ## Instalación
-### Prerrequisitos
 
-
+- Prerequisitos: 
 ### Instrucciones
-1. Clonar el repositorio: https://github.com/Santiag0Vidal
+Para poder visualizar correctamente este proyecto debe seguir las siguientes instrucciones:
+1. Instalar Node.js y npm: Node.js es un entorno de ejecución para JavaScript, y npm es el sistema de gestión de paquetes para Node.js. Se puede descargar e instalar Node.js desde su sitio web oficial: https://nodejs.org/en
+Descargar la ultima version estable e instalar
+Una vez instalado Node.js, npm también se instalará automáticamente en tu sistema.
+ 2. Después de completar la instalación, se puede verificar que Node.js y npm se hayan instalado correctamente abriendo una ventana de terminal (cmd o PowerShell) y ejecutando los siguientes comandos:
 
-## Archivo index.js
-## Archivo App.js
+ node -v
+ npm -v
 
-## Archivo index.css
+Estos comandos imprimirán las versiones instaladas de Node.js y npm.
 
-## package.json
+3. Instalar Git: 
+Ir a https://git-scm.com/ y descargar la ultima version.
+Instalarlo y luego ejecutar el siguiente comando en la terminal:
+
+git --version
+
+Este comando imprime la versión instalada de Git. Si ves la versión correctamente, significa que Git se ha instalado correctamente en tu sistema.
+
+4. Crear una carpeta en donde dejar el proyecto 
+
+5. Abrir la terminal (cmd), moverse a la carpeta recien creada
+Ejemplo: si cree la carpeta Proyectos voy a ejecutar el siguiente comando:
+cd C:\Users\USUARIO1\Documents\Proyectos
+
+6. Clonar el repositorio con el comando:
+
+git clone https://github.com/Santiag0Vidal/trabajo_practico_react_part
+
+7. Luego ejecutar:
+
+npm i 
+
+Con este comando npm lee el archivo package.json en el directorio actual y busca la sección dependencies y devDependencies. Luego, descarga e instala todas las dependencias listadas en estas secciones en una carpeta llamada node_modules en el directorio del proyecto.
+Al ejecutar el comando la terminal se verá asi, puede tardar unos minutos:
+![npmi](./src/assets/npmi.JPG)
+
+
+
+
+
 
