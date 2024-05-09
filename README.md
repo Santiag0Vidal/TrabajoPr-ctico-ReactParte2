@@ -23,6 +23,7 @@ Esta web es una plataforma para explorar información sobre diversas bandas de m
 - Fetch API: Empleado para cargar los datos de los mocks representando llamadas a una API real.
 - Tailwind: Este proyecto utiliza Tailwind CSS como su biblioteca de estilos principal. Tailwind CSS es una herramienta de desarrollo que ofrece una forma eficiente de construir interfaces de usuario altamente personalizables en aplicaciones web utilizando clases de utilidad predefinidas.
 - CSS Modules: Proporcionan estilos encapsulados para evitar conflictos y mantener la coherencia visual en toda la aplicación.
+- React-icons: es una biblioteca de iconos para React que proporciona una forma sencilla de incorporar íconos vectoriales en las aplicaciones React.
 
 
 - Para implementar la descarga de la informacion de cada banda en formato pdf utilizamos <b>react-pdf</b>, que es una biblioteca que permite generar documentos PDF en aplicaciones de React tanto en el cliente como en el servidor. Al no utilizar una API externa la biblioteca react-pdf nos permite una integración sencilla y efectiva dentro de la aplicación React, proporcionando una experiencia de usuario fluida y rápida sin tener que depender de servicios externos o del servidor.

@@ -10,13 +10,18 @@ function Home() {
     const [filteredElements, setFilteredElements] = useState([]);
    
     useEffect(() => {
-        fetch('/mocks/bandas.json')
-            .then(response => response.json())
-            .then(data => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/mocks/bandas.json');
+                const data = await response.json();
                 setElements(data);
                 setFilteredElements(data); 
-            })
-            .catch(error => console.error('Error fetching bandas:', error));
+            } catch (error) {
+                console.error('Error fetching bandas:', error);
+            }
+        };
+        
+        fetchData();
     }, []);
 
     const handleSearch = (searchTerm) => {
