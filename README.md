@@ -11,6 +11,12 @@ Bandas x2
 ## Descripcion del proyecto:
 Esta web es una plataforma para explorar información sobre diversas bandas de música. Utiliza una serie de mocks para representar la información de las bandas y proporcionar a los usuarios detalles relevantes sobre cada una de ellas.
 
+## Caracteristicas principales:
+- Listado de bandas:  Al ingresar a la aplicación, los usuarios son recibidos con una lista de bandas, cada una presentada con su nombre. Esta lista se genera a partir de un archivo JSON que simula una llamada a una API.
+- Busqueda de bandas: Los usuarios pueden utilizar una función de búsqueda para filtrar la lista de bandas según el nombre, facilitando así encontrar sus bandas preferidas de manera más eficiente.
+- Detalles de la banda: Al seleccionar una banda de la lista, el componente ElementDetails.jsx se encarga de hacer un nuevo fetch para obtener el archivo mock específico de esa banda. Esto permite mostrar información detallada como biografía, discografía, y más
+- Descarga de informacion en PDF: Cada página de detalles de banda ofrece la opción de descargar la información presentada en formato PDF, permitiendo a los usuarios guardar o imprimir los detalles de sus bandas favoritas.
+
 ## Tecnologías Utilizadas
 - React: Utilizado para construir la interfaz de usuario con componentes reutilizables y gestionar el estado de la aplicación.
 - React Router: Maneja la navegación entre las diferentes páginas de la aplicación, permitiendo un flujo de usuario fluido y dinámico sin recargar la página.
@@ -57,14 +63,14 @@ Ejemplo: si cree la carpeta Proyectos voy a ejecutar el siguiente comando:
 <p><b> npm i </p></b> 
 
 Con este comando npm lee el archivo package.json en el directorio actual y busca la sección dependencies y devDependencies. Luego, descarga e instala todas las dependencias listadas en estas secciones en una carpeta llamada node_modules en el directorio del proyecto.
-Al ejecutar el comando la terminal se verá asi, puede tardar unos minutos:
+Al ejecutar el comando la terminal se verá asi, puede tardar unos minutos: 
 ![npmi](./src/assets/npmi.JPG)
 
-8. Finalizado estos pasos se puede ejecutar el comando:
+8. Finalizados estos pasos se puede ejecutar el comando:
 
 <p><b> npm start </p></b>
 
-y se inciciara la aplicacion.
+y se iniciara la aplicacion.
 
 Deberia visualizarse de la siguiente manera:
 ![app](./src/assets/VisualizacionApp.JPG)
